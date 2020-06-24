@@ -12,7 +12,7 @@ This plug-in works with Apama 10.5 or later. You can download Apama from http://
 To use this plug-in to control Kasa devices from EPL, first you need to add the plug-in to your correlator configuration YAML:
 
 	eplPlugins:
-	   WoLPlugin:
+	   WakeOnLanPlugin:
 	      pythonFile: "${PARENT_DIR}/wol.py"
 	      class: WakeOnLanePluginClass
 

@@ -5,7 +5,7 @@ package com.apamax;
 event WakeOnLan
 {
 	/** @private */
-	import "KasaPlugin" as plugin;
+	import "WakeOnLanPlugin" as plugin;
 	/**
 	 */
 	static action wakeByMACAddress(string macAddress)
