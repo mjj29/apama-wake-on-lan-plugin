@@ -1,5 +1,13 @@
 package com.apamax;
 
+event Ping
+{
+	constant string CHANNEL := "Ping.channel";
+	integer requestId;
+	string host;
+	boolean state;
+}
+
 /**
  */
 event WakeOnLan
@@ -11,5 +19,16 @@ event WakeOnLan
 	static action wakeByMACAddress(string macAddress)
 	{
 		plugin.wakeMAC(macAddress);
+	}
+	static action ping(string host) returns integer
+	{
+		integer id := integer.incrementCounter(Ping.CHANNEL);
+		plugin.ping(host, id, Ping.CHANNEL);
+		return id;
+	}
+
+	static action shutdown()
+	{
+		plugin.shutdown();
 	}
 }
